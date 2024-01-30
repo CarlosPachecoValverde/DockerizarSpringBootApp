@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  app:
+    image: usuarioapp
+    ports:
+      - "8080:8080"
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_USER: carlos
+      MYSQL_PASSWORD: carlosdb
+      MYSQL_DATABASE: base_empleados
+      MYSQL_ROOT_PASSWORD: carlosdb
