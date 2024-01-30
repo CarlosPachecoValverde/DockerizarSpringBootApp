@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import proyectoUsuarios.model.Usuario;
 
 
+
 public interface UsuarioRepository {
 	
 	
