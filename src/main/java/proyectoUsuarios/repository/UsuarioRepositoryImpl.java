@@ -58,4 +58,24 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
 		return template.query(sql, new UsuarioRowMapper());
 	}
 
+	@Override
+	public void delUsuario(long id) {
+		String sql= "DELETE FROM usuario WHERE id=?";
+		template.update(sql,id);
+		
+	}
+
+	@Override
+	public Usuario getUsuario(long id) {
+		String sql = "SELECT * FROM usuario WHERE id=?";
+		return template.queryForObject(sql, new UsuarioRowMapper(),id);
+	}
+
+	@Override
+	public void updateUsuario(Usuario usuario) {
+		String sql = "UPDATE usuario SET nombre=?,tiempo=?,comentario=?,parcelas=? WHERE id=?";
+		template.update(sql,usuario.getNombre(),usuario.getTiempo(),usuario.getComentario(),usuario.getParcelas(),usuario.getId());
+		
+	}
+
 }

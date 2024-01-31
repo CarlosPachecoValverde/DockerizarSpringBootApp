@@ -1,17 +1,12 @@
-package proyectoUsuarios.repository;
+package proyectoUsuarios.service;
 
 import java.util.List;
 
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import proyectoUsuarios.model.Usuario;
 
-
-
-public interface UsuarioRepository {
-	
+public interface UsuarioService {
 	
 	public int addUsuario(Usuario usuario);
 	public List<Usuario> getUsuarios();
@@ -20,4 +15,5 @@ public interface UsuarioRepository {
 	public void updateUsuario(Usuario usuario)throws EmptyResultDataAccessException;
 	
 	
+
 }
